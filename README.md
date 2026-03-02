@@ -2,6 +2,8 @@
 
 Heya! This is a fork of [CustomCSS Injector](https://github.com/blizz31/customcssinjector/)
 
+**You can install it here:** https://addons.mozilla.org/firefox/addon/crayon-custom-css-injector/
+
 Why did I fork it? Here is what I did:
 
 - Updated 3rd-party libraries (Prism and Bliss)
@@ -18,3 +20,7 @@ Why did I fork it? Here is what I did:
 ### Licence
 
 Like the original, this project is under the [GNU GPL v3](LICENCE).
+
+### Contribute
+
+I accept pull requests and Liberapay donations: https://liberapay.com/Brylan/
