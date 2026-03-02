@@ -48,7 +48,7 @@ for(const radioBtn of $$("input[type=radio]"))
 	radioBtn.addEventListener("change", switchTab);
 
 // JSON Object that contains all CSS
-let tempCSSObj;
+let tempCSSObj = {};
 const {
 	domain: activeTabDomain,
 	url: activeTabUrl,
