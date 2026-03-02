@@ -26,9 +26,15 @@ function selectTab(radioBtn) {
 	updateScopeText();
 }
 function updateScopeText() {
-	scopeInfo.innerHTML = currentTab === rglobal ? "This will apply everywhere"
-		: currentTab === rdomain ? `This will apply on <code>${activeTabDomain}</code>`
-		: `This will apply on <code>${activeTabUrl}</code>`;
+	if(currentTab === rglobal)
+		scopeInfo.textContent = "This will apply everywhere";
+	else
+	{
+		scopeInfo.textContent = "This will apply on ";
+		scopeInfo.appendChild($.create("code", {
+			contents: currentTab === rdomain ? activeTabDomain : activeTabUrl,
+		}));
+	}
 }
 
 function switchTab()
