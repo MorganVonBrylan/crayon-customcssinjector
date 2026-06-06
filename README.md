@@ -24,3 +24,5 @@ Like the original, this project is under the [GNU GPL v3](LICENCE).
 ### Contribute
 
 I accept pull requests and Liberapay donations: https://liberapay.com/Brylan/
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/brylan)
