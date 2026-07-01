@@ -100,7 +100,8 @@ function filterCustomCSSObj(customCSSObj)
 
 // Upon clicking 'Save', save the custom CSS to browser storage
 // This will call update() in customcss.js and apply the CSS to the DOM
-$("#btnSubmit").addEventListener("click", async () => {
+async function save()
+{
 	const customCSS = txtAreaCSS.value;
 	if(rglobal.checked)
 		tempCSSObj.css = customCSS;
@@ -115,6 +116,14 @@ $("#btnSubmit").addEventListener("click", async () => {
 		blacklist: stringToList(blacklistText.value),
 	});
 	unsavedChanges.hidden = true;
+}
+$("#btnSubmit").addEventListener("click", save);
+document.addEventListener("keydown", event => {
+	if(event.ctrlKey && event.key.toUpperCase() === "S")
+	{
+		event.preventDefault();
+		save();
+	}
 });
 
 function stringToList(string) {
