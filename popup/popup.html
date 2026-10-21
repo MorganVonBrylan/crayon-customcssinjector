@@ -21,7 +21,7 @@
 	</header>
 	<nav>
 		<form>
-			<label><input id="rglobal" type="radio" name="scope" value="global" checked> Global rules</label>
+			<label><input id="rglobal" type="radio" name="scope" value="global"> Global rules</label>
 			<label><input id="rdomain" type="radio" name="scope" value="domain"> Domain rules</label>
 			<label><input id="rurl" type="radio" name="scope" value="url"> URL rules</label>
 		</form>
@@ -29,7 +29,7 @@
 	</nav>
 	<main>
 		<label for="txtAreaCSS" id="scopeInfo"></label>
-		<textarea id="txtAreaCSS" class="prism-live language-css" placeholder="Start typing here" autocorrect="off"></textarea>
+		<textarea id="txtAreaCSS" class="prism-live language-css" placeholder="If you see this, Crayon has failed to load..." autocorrect="off"></textarea>
 		
 		<label for="whitelistText">Whitelist Domains (separate with commas):</label>
 		<input id="whitelistText" placeholder="Leave blank to apply to all" type="text" autocorrect="off" />
@@ -38,8 +38,8 @@
 		<small>Example domain: <code>www.google.com</code>. Wildcards are supported for subdomains, e.g <code>*.google.com</code> will match <code>www.google.com</code>, <code>mail.google.com</code>, etc</small>
 	</main>
 	<div id="buttons">
-		<button id="btnSubmit" title="Ctrl+S">Save</button>
-		<button id="btnOverview">Overview & help</button>
+		<button disabled id="btnSubmit" title="Ctrl+S">Save</button>
+		<button disabled id="btnOverview">Overview & help</button>
 	</div>
 </body>
 </html>

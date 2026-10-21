@@ -1,8 +1,8 @@
 (async function() {
 "use strict";
 const $ = Bliss, $$ = Bliss.$;
-
 $("#btnOverview").addEventListener("click", () => window.open("/overview/index.html"));
+$("#btnOverview").disabled = false;
 
 const unsavedChanges = $("#unsaved-changes");
 const txtAreaCSS = $("#txtAreaCSS");
@@ -119,6 +119,7 @@ async function save()
 	unsavedChanges.hidden = true;
 }
 $("#btnSubmit").addEventListener("click", save);
+$("#btnSubmit").disabled = false;
 document.addEventListener("keydown", event => {
 	if(event.ctrlKey && event.key.toUpperCase() === "S")
 	{
@@ -152,5 +153,7 @@ function cleanup(customCSSObj)
 	
 	return customCSSObj;
 }
+
+txtAreaCSS.placeholder = "Start typing here";
 
 })(); // end IIFE
