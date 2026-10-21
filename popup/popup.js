@@ -19,7 +19,7 @@ function onError(error) {
 const rglobal = $("#rglobal");
 const rdomain = $("#rdomain");
 const rurl = $("#rurl");
-let currentTab = rglobal;
+let currentTab = rdomain;
 function selectTab(radioBtn) {
 	currentTab = radioBtn;
 	currentTab.checked = true;
@@ -94,8 +94,9 @@ function filterCustomCSSObj(customCSSObj)
 		selectTab(rdomain);
 		return tempCSSObj[activeTabDomain];
 	}
-	updateScopeText();
-	return tempCSSObj.css || "";	
+	const { css = "" } = tempCSSObj;
+	selectTab(css ? rglobal : rdomain);
+	return css;	
 }
 
 // Upon clicking 'Save', save the custom CSS to browser storage
