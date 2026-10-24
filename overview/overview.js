@@ -67,12 +67,20 @@ for(const key in customCSSObj)
 for(const [domainName, domain] of Object.entries(domains).sort(sortByLocation))
 {
 	const domainElement = createSection(domainName, domainName, domain[css] || "");
-	for(const [path, pathCSS] of Object.entries(domain).sort(sortByLocation))
+	for(const [path, pathCSS] of Object.entries(domain).sort())
 		createSection(path, domainName+path, pathCSS, $(".codeContainer", domainElement));
 }
 
+/** @param {string[]} location a @param {string[]} location b */
 function sortByLocation([la], [lb]) {
-	return la > lb ? 1 : -1;
+	const [tldA, domainA, ...subdomainsA] = la.split(".").reverse();
+	const [tldB, domainB, ...subdomainsB] = lb.split(".").reverse();
+	if(domainA !== domainB) return domainA > domainB ? 1 : -1;
+	if(tldA !== tldB) return tldA > tldB ? 1 : -1;
+	for(let i = 0 ; i in subdomainsA || i in subdomainsB ; i++)
+		if(subdomainsA[i] !== subdomainsB[i])
+			return subdomainsA[i] > subdomainsB[i] ? 1 : -1;
+	return 0;
 }
 
 if($("main details"))
